@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #ede9f7;
+    color: #2b2540;
+}
+
+/* Menú de la izquierda */
+
+.menu {
+    width: 320px;
+    flex-shrink: 0;
+    padding: 28px 24px;
+    background: #3b1f8c;
+    color: #ffffff;
+}
+
+.menu h1 {
+    font-size: 1.5rem;
+    margin: 0 0 28px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 0.9rem;
+}
+
+textarea {
+    padding: 14px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    resize: vertical;
+}
+
+textarea:focus {
+    border-color: #b9a6f5;
+}
+
+button {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #ffffff;
+    color: #3b1f8c;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e4dbfb;
+}
+
+.total {
+    margin-top: 28px;
+    color: #cfc3f3;
+}
+
+/* Tarjetas de la derecha */
+
+.contenido {
+    flex: 1;
+    min-width: 0;
+    padding: 28px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    align-content: start;
+}
+
+.tarjeta {
+    padding: 18px;
+    background: #ffffff;
+    border-radius: 12px;
+    border-top: 4px solid #5b3cc4;
+    box-shadow: 0 4px 14px rgba(60, 30, 130, 0.12);
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.vacio {
+    grid-column: 1 / -1;
+    color: #7a7390;
+}
+
+/* Diseño responsive */
+
+@media (max-width: 700px) {
+
+    body {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .contenido {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        padding: 20px;
+    }
+
+}
